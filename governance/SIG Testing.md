@@ -10,7 +10,7 @@ set expectations for the quality bar
 
 Two concise lines explaining what this SIG does with bullet points of the major responsibilities
 
-- Responsibility 1
+- Responsibility 
 
 **Goals**
 
