@@ -1,4 +1,4 @@
-# SIG Testing QA Charter
+# SIG Testing Charter
 
 This charter adheres to the Roles and Organization Management specified in <sig-governance>.
  Team information may be found in the <readme.md>
