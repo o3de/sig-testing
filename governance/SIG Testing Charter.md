@@ -1,98 +1,130 @@
-**SIG Testing QA Charter**
+# SIG Testing QA Charter
 
 This charter adheres to the Roles and Organization Management specified in <sig-governance>.
  Team information may be found in the <readme.md>
 
-**Overview of SIG**
+## Overview of SIG
 
-Provide quality assurance bars for testing involved for quality.
-set expectations for the quality bar
+SIG Testing exists to make testing software easy, accessible, automated, and mandatory for all O3DE contributors. This charter aims to maintain the quality bar across all O3DE SIGs, and champions the O3DE development experience of both contributors and end users. SIG Testing provides tools and resources for testing, maintains test automation frameworks and test metrics, and also sets and enforces quality assurance policies.
 
-Two concise lines explaining what this SIG does with bullet points of the major responsibilities
+## Goals
 
-- Responsibility 
+* Enable other SIGs to efficiently protect their own code from defects
+  * Expand what can be tested
+  * Identify inefficient tests and help them execute faster
+  * Set policies for consistent quality standards between SIGs
+  * Audit existing code for efficiency and correctness?
+* Ensure automated testing can run in the Automated Review (AR) build pipeline and Periodic (Nightly) build pipelines
+  * Maintain the pre-validation system and its rules
+  * Define the post-build test suites executed in the AR pipeline, and suite requirements
+  * Resolve testing issues that block the AR pipeline
+  * Prevent tests from being improperly disabled, bypassed, or ignored
+  * Define requirements of AR test nodes
+* Provide test automation frameworks and tools across all supported platforms
+    * Standardize and unify test automation, to limit divergent or parallel testing effort
 
-**Goals**
+## In Scope
 
-- Major goals that SIG seeks to generally achieve
+* O3DE Testing Software
+  * Test-specific frameworks, tools, and middleware
+  * Performance benchmark frameworks, tools, and middleware
+  * Metrics and reports created on the local machine
+    * Test results and artifacts
+    * Code coverage
+    * Logfile root-cause analysis and failure summaries
+  * Retrofit new software patterns onto untested features, to expose them for testing by other SIGs
+  * Automated tests verifying contributors can write test automation, these tests target:
+    * The testing framework itself
+    * Individual test tools
+    * AR pipeline functionality
+    * Working example tests
+* Automated Review (shared ownership with SIG-Build)
+  * Pre-validation phase of AR
+  * Test phase of the AR pipeline and periodic (nightly) builds
+  * Metrics, reports, and dashboards for tests that execute remotely in AR
+* Pull Request Reviews from other SIGs
+  * SIG-Testing may be added to any pull request to ask for testing advice
+* Documentation
+  * Docs for each category “In Scope” above
+  * Test writing guides
+  * Roadmap of SIG features
 
-**Scope**
+## Cross-cuttong Processes
 
-* Provide AR automated review framework
-* Develop and maintain testing framework
-* Develop and maintain the rules and code for prevalidation scripts
-* Develop and manage the platforms supported in the framework for coverage
-* Invocation and management of asset processing framework for tests to run (questioned other SIGs)
-* Discovery, scheduling, node sizing, and harness invocation of test cases with result reporting  (build team question)
-* Define and maintain guidelines for requirements of test nodes
-* Define and maintain database of standard tags and test cases 
+* Testing policies across all other SIGs, such as:
+  * Handling changes that break tests in seemingly unrelated code
+  * Resolving intermittent failures
+  * Auditing existing tests
+  * Maximum test duration (timeouts)
+  * Minimum performance requirements
+  * How to prioritize test cases
+  * How and how often to organize exploratory manual testing “bug bash” exercises
+* Releases
+  * Define and verify quality bar of branches marked for release
 
-**In scope**
+## Out of Scope
 
-* Any testing that tests the framework itself or its tools 
-* Responsible to maintain and define versions used for LYTest tools, google test and related tools
-* Design and maintain jenkins code and configuration (Move to Contrib/Dev Workflow?)
-* Design and maintain scripts executed by jenkins for the framework (Move to Contrib/Dev Workflow?)
-* Define KPI and SLAs for test metrics
-* Creation and reporting of metrics to devstats dashboard and related systems related to QA stats
-  * Documentation of prioritization of test cases, define categories and actions for each
-  * Perform Testing across platforms in both automated or manual forms, but not responsible for development of invocation scripts per platform.
-  * Provide performance and ensure meets the minimum defined accepted quality bar
-  * Define and provide guardraids of minimum accepted quality experience and performance 
-  * Define SLA of action on discovery of issues found.
-  * Maintain bug test database for purposes of test cases and bugs.
-  * Maintain and define stabilization of test cases to ensure tech debt limits are not exceeded. 
-  * Periodic reviews of test cases and collateral
-  * SLA to define frequance of maintance of test stabilization
-  * Define quality bar of branch marked for release potential
-  * Responsible for all other forms not defined in functional testing in or out of automation, but not responsible for the test code written by other SIGs or community (or maintain / write)
+* Maintain all individual tests on behalf of other SIGs
+  * Approve every pull request which targets the main development branch
+  * Track which tests are not automated/automatable in a feature area
+* Develop non-testing extensions to features owned by other SIGs
+* Maintain the entire Automated Review pipeline, including Jenkins and its hardware infrastructure fleet
+* Provide headcount to execute manual test plans
+* Service Level Agreement (SLA) for other SIGs to act on known issues
 
-**Cross-cutting Processes**
+## SIG Links and Lists:
 
-* Provide guidelines and procedures around manual testing models to work with SIGs
-* Provide guidelines and procedures around automated testing methods.
-* Provide automated root cause analysis of failed tests to SIGs
-* Provide information and mitigation steps for tests that break another unrelated area.
-* Define mechanism and procedures to escalate to disable test failures
+* Joining this SIG
+* Joining Slack/Discord
+* Mailing list
+* Issues/PRs
+* Meeting Agenda & Notes
 
-**Out of Scope**
- 
-* Not responsible for writing tests for code - 
-* Not responsible for specific scripts that operate under the toolchain or framework
-* Not directly responsible for manual testing, but may provide assistance or guidance to SIG teams to do manual testing of features.
-* Not responsible for development of asset processing extensions 
-* Not responsible for the provisioning of test node infrastructure, but may advise teams on how to implement extensions
+## Roles and Organization Management
 
-**SIG Links and lists:**
+SIG Testing adheres to the standards for roles and organization management as specified by <sig-governance>. This SIG opts in to updates and modifications to <sig-governance>
 
-- Joining this SIG
-- Slack/Discord
-- Mailing list
-- Issues/PRs
-- Meeting agenda & Notes
+### Individual Contributors
 
-**Roles and Organization Management**
+Additional information not found in the sig-governance related to contributors:
 
-SIG Docs adheres to the standards for roles and organization management as specified by <sig-governance>. This SIG opts in to updates and modifications to <sig-governance>
+* Include sig-testing on all pull requests modifying O3DE testing software, listed above as “In Scope”
+  * Concisely describe the proposed contribution
+  * Include new unit tests and testable examples alongside new testing features
+* Optionally include sig-testing on pull requests for other features which need testing feedback
+  * Clarify any questions being asked, or highlight tests that need feedback
+* Log issues to track bugs and feature requests
+* Provide feedback on open issues
 
-**Individual Contributors**
-Code must be included with a description of the test case requirements
-++ Define number of tests and tagging test cases to determine if can be done in parallel or special case, or sequence, or impacts to other test cases.
-++ Must follow debug guidelines - get docs from nusrath on guidelines
+### Maintainers
 
+Additional information not found in the sig-governance related to maintainers of this SIG:
 
-**Maintainers**
+* All responsibilities of Individual Contributors, plus those of Maintainers listed below
+* Review incoming pull requests from contributors, a minimum of twice per month
+* Actively contribute to at least one activity defined above in the “In Scope” section
+  * Submit at least one pull request per month modifying code, tests, policies, or documentation
+* Attend at least one charter meeting a month (how often will these meetings be held, weekly?)
+  * Take turns recording meeting minutes
+* Set and establish team meetings and future activities
+* Resolve disputes among contributors and maintainers
+  * Bring deadlocked disputes to the SIG Chair for review
 
-Additional information not found in the sig-governance related to contributors
+## SIG Chairs
 
-**Additional responsibilities of Chairs**
+Additional information not found in the sig-governance related to SIG Chairs:
 
-Additional information not found in the sig-governance related to SIG Chairs
+* All responsibilities of Individual Contributors and Maintainers, plus those of the Chair listed below
+* Work with sig-governance to set and maintain future direction
+  * Report back any changes to the group
+* Set all agenda related to roadmap
+* Be a tie breaker when conflicts within the group deadlock
+* Disputes with the chair can be brought to the sig-governance board for review
 
-**Subproject Creation**
+## Subproject Creation
 
-Additional information not found in the sig-governance related to subproject creation
+Placeholder for additional information not found in the sig-governance related to subproject creation.  There are currently none.
 
-**Deviations from sig-governance**
+## Deviations from sig-governance
 
-Explicit Deviations from the sig-governance
+Placeholder for explicit deviations from sig-governance guidance. There are currently none.
