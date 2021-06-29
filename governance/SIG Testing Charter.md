@@ -5,7 +5,7 @@ This charter adheres to the Roles and Organization Management specified in <sig-
 
 ## Overview of SIG
 
-SIG Testing exists to make testing software easy, accessible, automated, and mandatory for all O3DE contributors. This charter aims to maintain the quality bar across all O3DE SIGs, and champions the O3DE development experience of both contributors and end users. SIG Testing provides tools and resources for testing, maintains test automation frameworks and test metrics, and also sets and enforces quality assurance policies.
+[SIG Testing](https://github.com/orgs/o3de/teams/sig-testing) exists to make testing software easy, accessible, automated, and mandatory for all O3DE contributors. This charter aims to maintain the quality bar across all O3DE SIGs, and champions the O3DE development experience of both contributors and end users. SIG Testing provides tools and resources for testing, maintains test automation frameworks and test metrics, and also sets and enforces quality assurance policies.
 
 ## Goals
 
@@ -75,11 +75,11 @@ SIG Testing exists to make testing software easy, accessible, automated, and man
 
 ## SIG Links and Lists:
 
-* Joining this SIG
+* [Joining this SIG](https://github.com/orgs/o3de/teams/sig-testing/members)
 * Joining Slack/Discord
 * Mailing list
-* Issues/PRs
-* Meeting Agenda & Notes
+* [Issues](https://github.com/o3de/sig-testing/issues) and [Pull Requests](https://github.com/o3de/sig-testing/pulls)
+* [Meeting Agendas & Notes](https://github.com/o3de/sig-testing/labels/mtg-agenda)
 
 ## Roles and Organization Management
 
