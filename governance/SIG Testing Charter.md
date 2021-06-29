@@ -13,7 +13,8 @@ SIG Testing exists to make testing software easy, accessible, automated, and man
   * Expand what can be tested
   * Identify inefficient tests and help them execute faster
   * Set policies for consistent quality standards between SIGs
-  * Audit existing code for efficiency and correctness?
+  * Audit existing code for efficiency and correctness
+  * Make test reports legible at a glance
 * Ensure automated testing can run in the Automated Review (AR) build pipeline and Periodic (Nightly) build pipelines
   * Maintain the pre-validation system and its rules
   * Define the post-build test suites executed in the AR pipeline, and suite requirements
@@ -60,7 +61,7 @@ SIG Testing exists to make testing software easy, accessible, automated, and man
   * How to prioritize test cases
   * How and how often to organize exploratory manual testing “bug bash” exercises
 * Releases
-  * Define and verify quality bar of branches marked for release
+  * Define and verify the quality bar of branches marked for release
 
 ## Out of Scope
 
@@ -70,7 +71,7 @@ SIG Testing exists to make testing software easy, accessible, automated, and man
 * Develop non-testing extensions to features owned by other SIGs
 * Maintain the entire Automated Review pipeline, including Jenkins and its hardware infrastructure fleet
 * Provide headcount to execute manual test plans
-* Service Level Agreement (SLA) for other SIGs to act on known issues
+* Defining or enforcing a Service Level Agreement (SLA) for how fast other SIGs to act on their own issues
 
 ## SIG Links and Lists:
 
@@ -104,7 +105,7 @@ Additional information not found in the sig-governance related to maintainers of
 * Review incoming pull requests from contributors, a minimum of twice per month
 * Actively contribute to at least one activity defined above in the “In Scope” section
   * Submit at least one pull request per month modifying code, tests, policies, or documentation
-* Attend at least one charter meeting a month (how often will these meetings be held, weekly?)
+* Attend at least one charter meeting per year (how often will these meetings be held, monthly?)
   * Take turns recording meeting minutes
 * Set and establish team meetings and future activities
 * Resolve disputes among contributors and maintainers
