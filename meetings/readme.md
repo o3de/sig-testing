@@ -20,11 +20,15 @@ Please feel free to propose any of your topics, thoughts, or areas you feel are 
 
 Below is a list of all prior completed meetings and related resources.
 
-## Documentation Special Interest Group
+## Testing Special Interest Group
 
-| No   | Date       | Time | Agenda  | Media | Notes | Resources |
-| ---- | ---------- | ---- | ------- | ----- | ----- | ---- |
-| 0001 | 2021-00-00 | 0000 UTC | n/a | n/a | Link | Link |
+| No   | Date y-m-d | Time     | Agenda         | Media | Notes | Resources |
+| ---- | ---------- | -------- | -------        | ----- | ----- | --------- |
+| 0001 | 2021-07-01 | 1800 UTC | Review Charter | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/media/0001.zip)  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0001.md)  | N/A      |
+
+
+https://github.com/o3de/sig-testing/tree/main/meetings
+
 
 # General Resources
 
