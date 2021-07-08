@@ -1,7 +1,6 @@
 # SIG Testing Charter
 
-This charter adheres to the Roles and Organization Management specified in <sig-governance>.
- Team information may be found in the <readme.md>
+This charter adheres to the Roles and Organization Management specified in <sig-governance>. Team information may be found in the [readme.md](https://github.com/o3de/sig-testing/blob/main/README.md)
 
 ## Overview of SIG
 
@@ -10,23 +9,32 @@ This charter adheres to the Roles and Organization Management specified in <sig-
 ## Goals
 
 * Enable other SIGs to efficiently protect their own code from defects
-  * Expand what can be tested
-  * Identify inefficient tests and help them execute faster
-  * Set policies for consistent quality standards between SIGs
+  * Expand which software can be tested
+  * Expand the ways in which software can be tested, such as:
+    * Traditional binary testing (case pass/fail)
+    * Qualatative performance testing (scenario consumes +/-X% resources)
   * Audit existing code for efficiency and correctness
-  * Make test reports legible at a glance
-* Ensure automated testing can run in the Automated Review (AR) build pipeline and Periodic (Nightly) build pipelines
+    * Identify inefficient tests and help them execute faster
+  * Set consistent quality standards between SIGs
+    * Raise this standard over time
+  * Make test metrics and reports legible at a glance
+* Enable public customers and contributors to run existing tests and write new tests
+  * Provide all tests, ready to run
+  * Contributing tests is simple
+  * Projects using O3DE are easy to test
+* Ensure automated testing can execute in the Automated Review (AR) build pipeline and Periodic (Nightly) build pipelines
   * Maintain the pre-validation system and its rules
   * Define the post-build test suites executed in the AR pipeline, and suite requirements
   * Resolve testing issues that block the AR pipeline
   * Prevent tests from being improperly disabled, bypassed, or ignored
   * Define requirements of AR test nodes
-* Provide test automation frameworks and tools across all supported platforms
+* Provide test automation frameworks and tools across all supported operating systems
     * Standardize and unify test automation, to limit divergent or parallel testing effort
+    * Enable OS-agnostic tests
 
 ## In Scope
 
-* O3DE Testing Software
+* O3DE Testing Software (software which helps write tests)
   * Test-specific frameworks, tools, and middleware
   * Performance benchmark frameworks, tools, and middleware
   * Metrics and reports created on the local machine
@@ -34,30 +42,37 @@ This charter adheres to the Roles and Organization Management specified in <sig-
     * Code coverage
     * Logfile root-cause analysis and failure summaries
   * Retrofit new software patterns onto untested features, to expose them for testing by other SIGs
-  * Automated tests verifying contributors can write test automation, these tests target:
+  * Automated tests which verify contributors can write test automation, such tests target:
     * The testing framework itself
     * Individual test tools
     * AR pipeline functionality
     * Working example tests
 * Automated Review (shared ownership with SIG-Build)
-  * Pre-validation phase of AR
+  * Pre-validation "Early Warning System" phase of AR
   * Test phase of the AR pipeline and periodic (nightly) builds
-  * Metrics, reports, and dashboards for tests that execute remotely in AR
-* Pull Request Reviews from other SIGs
-  * SIG-Testing may be added to any pull request to ask for testing advice
+  * Metrics, reports, and dashboards for tests that execute remotely in AR and Nightly builds
+* Pull Request reviews from other SIGs
+  * SIG-Testing may be added to any pull request to request testing advice
 * Documentation
   * Docs for each category “In Scope” above
+  * How to reach out to this SIG
   * Test writing guides
+    * Test Plans for a component
+    * Individual tests for a feature
+    * Covering multiple operating systems
   * Roadmap of SIG features
 
-## Cross-cuttong Processes
+## Cross-cutting Processes
 
-* Testing policies across all other SIGs, such as:
+The following responsibilities are driven by SIG-Testing across all other O3DE SIGs
+
+* Issue tracking guidelines
+  * How to use Templates and Labels
+* Test policy recommendations, such as:
   * Handling changes that break tests in seemingly unrelated code
   * Resolving intermittent failures
   * Auditing existing tests
   * Maximum test duration (timeouts)
-  * Minimum performance requirements
   * How to prioritize test cases
   * How and how often to organize exploratory manual testing “bug bash” exercises
 * Releases
@@ -65,13 +80,19 @@ This charter adheres to the Roles and Organization Management specified in <sig-
 
 ## Out of Scope
 
+* Provide headcount to execute manual test plans
 * Maintain all individual tests on behalf of other SIGs
+  * Write new automated tests for each feature
+  * Fix individual broken tests or the product bugs they point to
   * Approve every pull request which targets the main development branch
+  * Run additional automated tests not configured to execute in Jenkins
   * Track which tests are not automated/automatable in a feature area
+  * Monitoring individual test health or their metrics
+    * Defining software performance requirements
 * Develop non-testing extensions to features owned by other SIGs
 * Maintain the entire Automated Review pipeline, including Jenkins and its hardware infrastructure fleet
-* Provide headcount to execute manual test plans
 * Defining or enforcing a Service Level Agreement (SLA) for how fast other SIGs to act on their own issues
+* Policing other SIG's goals or priorities
 
 ## SIG Links and Lists:
 
@@ -107,7 +128,8 @@ Additional information not found in the sig-governance related to maintainers of
   * Submit at least one pull request per month modifying code, tests, policies, or documentation
 * Attend at least one charter meeting per year (how often will these meetings be held, monthly?)
   * Take turns recording meeting minutes
-* Set and establish team meetings and future activities
+* Organize SIG-Testing meetings in Discord
+  * Meet with other SIGs when appropriate
 * Resolve disputes among contributors and maintainers
   * Bring deadlocked disputes to the SIG Chair for review
 
