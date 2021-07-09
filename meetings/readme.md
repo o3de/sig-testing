@@ -24,7 +24,7 @@ Below is a list of all prior completed meetings and related resources.
 
 | No   | Date y-m-d | Time     | Agenda         | Media | Notes | Resources |
 | ---- | ---------- | -------- | -------        | ----- | ----- | --------- |
-| 0001 | 2021-07-01 | 1800 UTC | Review Charter | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/media/0001.zip)  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0001.md)  | N/A      |
+| 0001 | 2021-07-01 | 1800 UTC | Review Charter | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/media/2021-07-01T18_04_57_162Z.mp3)  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0001.md)  | N/A      |
 
 
 https://github.com/o3de/sig-testing/tree/main/meetings
