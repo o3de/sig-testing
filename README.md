@@ -6,9 +6,9 @@
 
 ## Meetings
 
-Meeting notes from the [O3DE Meetings](https://o3de.github.io/foundation/sigs/sig-testing/).
+Meeting notes from the [O3DE Meetings](https://o3de.github.io/sig-testing/).
 
-The [full table of previous meetings](https://o3de.github.io/foundation/sigs/sig-testing/?id=previous-meetings) is available here.
+The [full table of previous meetings](https://o3de.github.io/sig-testing/?id=previous-meetings) is available here.
 
 # General Resources
 * [Extending LyTestTools](https://nodejs.org)
