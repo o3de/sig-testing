@@ -565,4 +565,4 @@ namespace AzToolsFramework
 ```
 
 ## Related  Documentation
-<!-- TODO: Include link to O3DE EPB documentation -->
+* [O3DE EPB Documentation](https://o3de.org/docs/user-guide/gems/reference/script/python/editor-python-bindings/)
