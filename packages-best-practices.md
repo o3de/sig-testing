@@ -1,25 +1,22 @@
----
-description: ' Best practices for how and when to create a Python package. '
-title: Python Packages Best Practices
----
+# Python Packages Best Practices
 
 This page contains steps on when and how to create a Python package.
 
-## When Can a Package be Made?
+## When should you make a Python package?
 
-A Python package can be created when it meets the following conditions:
+A Python package used by Open 3D Engine (O3DE) should be created when the package meets the following conditions:
 
-1. It contains multiple reusable modules.
-1. Multiple tests running in the Open 3D Engine pipeline depend on the package.
-1. The tests or modules cannot be moved to relatively import the package.
+* The library contains reusable modules.
+* Multiple tests running in the Open 3D Engine pipeline depend on the library.
+* The tests or modules cannot be moved to relatively import the library.
 
 Consider adding a module to an already existing package instead of creating a new one.
 
-## How to Make a Package
+## How to make a Python package
 
 Follow the official Python [documentation](https://packaging.python.org/tutorials/packaging-projects/) to create the test package. Existing packages such as `Tools/LyTestTools` can be referenced as examples.
 
-### Adding the Package to Bundled Python
+### Adding the package to the O3DE bundled Python
 
 Set up automatic installation of the newly created package during CMake configuration by editing `cmake/LYPython.cmake`. This adds a minor cost to installation time. Use the `ly_pip_install_local_package_editable()` function to install your new package.
 
