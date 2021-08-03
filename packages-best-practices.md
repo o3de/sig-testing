@@ -24,7 +24,7 @@ Set up automatic installation of the newly created package during CMake configur
 ly_pip_install_local_package_editable(${LY_ROOT_FOLDER}/<path-to-package> <package-name>)
 ```
 
-## Risks of Path Hacks
+## Risks of path hacks
 
 A workaround for importing modules is to hard code relative paths via `sys.path.append()`. We highly discourage use of this method because the solution is not scalable when any involved files move.
 
