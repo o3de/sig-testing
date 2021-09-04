@@ -1,10 +1,10 @@
 # SIG Testing Charter
 
-This charter adheres to the Roles and Organization Management specified in <sig-governance>. Team information may be found in the [readme.md](https://github.com/o3de/sig-testing/blob/main/README.md)
+This charter adheres to the Roles and Organization Management specified by the [O3DE Foundation](https://github.com/o3de/community). Team information may be found in the [readme.md](https://github.com/o3de/sig-testing/blob/main/README.md)
 
 ## Overview of SIG
 
-[SIG Testing](https://github.com/orgs/o3de/teams/sig-testing) exists to make testing software easy, accessible, automated, and mandatory for all O3DE contributors. This charter aims to maintain the quality bar across all O3DE SIGs, and champions the O3DE development experience of both contributors and end users. SIG Testing provides tools and resources for testing, maintains test automation frameworks and test metrics, and also sets and enforces quality assurance policies.
+[SIG Testing](https://github.com/orgs/o3de/teams/sig-testing) exists to make testing O3DE software easy, accessible, automated, and mandatory for all O3DE contributors. This charter aims to maintain the quality bar across all O3DE SIGs, and champions the O3DE development experience of both contributors and end users. SIG Testing provides tools and resources for testing, maintains test automation frameworks and test metrics, and also sets and enforces quality assurance policies.
 
 ## Goals
 
@@ -29,8 +29,8 @@ This charter adheres to the Roles and Organization Management specified in <sig-
   * Prevent tests from being improperly disabled, bypassed, or ignored
   * Define requirements of AR test nodes
 * Provide test automation frameworks and tools across all supported operating systems
-    * Standardize and unify test automation, to limit divergent or parallel testing effort
-    * Enable OS-agnostic tests
+  * Standardize and unify test automation, to limit divergent or parallel testing effort
+  * Enable OS-agnostic tests
 
 ## In Scope
 
@@ -94,21 +94,21 @@ The following responsibilities are driven by SIG-Testing across all other O3DE S
 * Defining or enforcing a Service Level Agreement (SLA) for how fast other SIGs to act on their own issues
 * Policing other SIG's goals or priorities
 
-## SIG Links and Lists:
+## SIG Links and Lists
 
 * [Joining this SIG](https://github.com/orgs/o3de/teams/sig-testing/members)
-* Joining Slack/Discord
-* Mailing list
+* [Joining Slack/Discord](https://discord.gg/p3padwr58u)
+* [Joining Mailing lists](https://lists.o3de.org/groups)
 * [Issues](https://github.com/o3de/sig-testing/issues) and [Pull Requests](https://github.com/o3de/sig-testing/pulls)
 * [Meeting Agendas & Notes](https://github.com/o3de/sig-testing/labels/mtg-agenda)
 
 ## Roles and Organization Management
 
-SIG Testing adheres to the standards for roles and organization management as specified by <sig-governance>. This SIG opts in to updates and modifications to <sig-governance>
+SIG Testing adheres to the standards for roles and organization management as specified by the [O3DE Foundation](https://github.com/o3de/community). This SIG opts in to updates and modifications to the Foundation's guidance.
 
 ### Individual Contributors
 
-Additional information not found in the sig-governance related to contributors:
+Responsibilities of contributors:
 
 * Include sig-testing on all pull requests modifying O3DE testing software, listed above as “In Scope”
   * Concisely describe the proposed contribution
@@ -116,18 +116,18 @@ Additional information not found in the sig-governance related to contributors:
 * Optionally include sig-testing on pull requests for other features which need testing feedback
   * Clarify any questions being asked, or highlight tests that need feedback
 * Log issues to track bugs and feature requests
-* Provide feedback on open issues
+* Provide feedback on open issues and RFCs
 
 ### Maintainers
 
-Additional information not found in the sig-governance related to maintainers of this SIG:
+Additional responsibilities of the members of [SIG Testing](https://github.com/orgs/o3de/teams/sig-testing):
 
-* All responsibilities of Individual Contributors, plus those of Maintainers listed below
+* All responsibilities of Individual Contributors, plus those listed below
 * Review incoming pull requests from contributors, a minimum of twice per month
 * Actively contribute to at least one activity defined above in the “In Scope” section
   * Submit at least one pull request per month modifying code, tests, policies, or documentation
-* Attend at least one charter meeting per year (how often will these meetings be held, monthly?)
-  * Take turns recording meeting minutes
+* Attend at least one SIG-Testing meeting per year
+  * Take turns recording meeting minutes, and uploading them [here](https://github.com/o3de/sig-testing/tree/main/meetings/notes)
 * Organize SIG-Testing meetings in Discord
   * Meet with other SIGs when appropriate
 * Resolve disputes among contributors and maintainers
@@ -135,19 +135,11 @@ Additional information not found in the sig-governance related to maintainers of
 
 ## SIG Chairs
 
-Additional information not found in the sig-governance related to SIG Chairs:
+Additional responsibilities of SIG Chairs:
 
-* All responsibilities of Individual Contributors and Maintainers, plus those of the Chair listed below
-* Work with sig-governance to set and maintain future direction
+* All responsibilities of Individual Contributors and Maintainers, plus those listed below
+* Work with [sig-governance](https://github.com/o3de/community) to set and maintain future direction
   * Report back any changes to the group
 * Set all agenda related to roadmap
 * Be a tie breaker when conflicts within the group deadlock
 * Disputes with the chair can be brought to the sig-governance board for review
-
-## Subproject Creation
-
-Placeholder for additional information not found in the sig-governance related to subproject creation.  There are currently none.
-
-## Deviations from sig-governance
-
-Placeholder for explicit deviations from sig-governance guidance. There are currently none.
