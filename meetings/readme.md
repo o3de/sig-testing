@@ -16,24 +16,12 @@ You can find a link to the proposed agenda for the next call in the table below.
 
 Please feel free to propose any of your topics, thoughts, or areas you feel are important to discuss.
 
-# Previous Meetings
+## Previous Meetings
 
 Below is a list of all prior completed meetings and related resources.
-
-## Testing Special Interest Group
 
 | No   | Date y-m-d | Time     | Agenda         | Media | Notes | Resources |
 | ---- | ---------- | -------- | -------        | ----- | ----- | --------- |
 | 0001 | 2021-07-01 | 1800 UTC | Review Charter | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/media/2021-07-01T18_04_57_162Z.mp3)  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0001.md)  | N/A      |
-
-
-https://github.com/o3de/sig-testing/tree/main/meetings
-
-
-# General Resources
-
-See [O3DE Resources](https://o3de.github.io/o3de/foundation) for additional information related to any SIG in O3DE.
-
-# Licensing
-
-The O3DE/foundation repository and all contributions under this repository herein are licensed under [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). Please note that, by contributing to this repository, whether via commit, pull request, issue, comment, or in any other fashion, **you are explicitly agreeing that all of your contributions will fall under the same permissive license.**
+| 0002 | 2021-07-01 | 1800 UTC | Pipeline Metrics | N/A   | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0002.md)  | N/A      |
+| 0003 | 2021-07-01 | 1800 UTC | GHI Metrics |  N/A  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0003.md)  | N/A      |
