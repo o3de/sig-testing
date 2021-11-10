@@ -4,7 +4,10 @@
   - [Introduction](#introduction)
   - [Policy](#policy)
     - [Exceptions](#exceptions)
-  - [The Sandbox Suite](#the-sandbox-suite)
+  - [Disabling Individual Tests](#disabling-individual-tests)
+    - [GoogleTest](#googletest)
+    - [PyTest](#pytest)
+  - [The Sandbox Test Suite](#the-sandbox-test-suite)
   - [Troubleshooting](#troubleshooting)
     - [Help! Is my Test Intermittent?](#help-is-my-test-intermittent)
       - [Step 1: Identify](#step-1-identify)
@@ -15,23 +18,24 @@
 
 ## Introduction
 
-This document describes handling unstable failures which seem to occur randomly. The most likely reason you are reading it is due to an intermittent issue in the [Automated Review Pipeline](https://jenkins.build.o3de.org/job/O3DE/).
+This document describes handling unstable failures which appear to occur randomly. The most likely reason you are reading this is due to an intermittent issue in the [Automated Review Pipeline](https://jenkins.build.o3de.org/job/O3DE/).
 
-The AR pipeline performs builds and tests, as well as additional configuration and asset processing steps. Pull Requests are required to be verified by Automated Review before changes get merged. This Continuous Integration system also executes "branch update jobs" after merges, to detect complex merge-order issues which can occur in the time between verification and merge. A separate pipeline also executes at a slower cadence, which runs a wider array of periodic tests and build variants. [SIG-Build](https://github.com/o3de/sig-build/) owns the Jenkins service and scripts and can advise on build failures, however the tests executed in this pipeline are primarily owned by other SIGs. These tests, along with their applications under test, must operate deterministically.
+The AR pipeline performs builds and tests, as well as additional configuration and asset processing steps. Pull Requests are required to be verified by Automated Review before changes get merged. This Continuous Integration system also executes "branch update jobs" after merges, to detect complex merge-order issues which can occur in the time between verification and merge. A separate pipeline also executes at a slower cadence, which runs a wider array of periodic tests and build variants. [SIG-Build](https://github.com/o3de/sig-build/) owns the Jenkins service and scripts and can advise on build failures. [SIG-Testing](https://github.com/o3de/sig-build/) owns test-tools as well as their sanity-tests in this pipeline. While these SIGs create the foundation for testing, the tests executed in this pipeline are primarily owned by other SIGs. These tests, along with the applications they target, must operate deterministically.
 
 If you are blocked, you own fixing what blocks you and/or finding support. Even if you are not blocked, the community will appreciate fixes or feedback submitted to the appropriate SIG. Which SIG owns a failure is not always obvious, as the Automated Review pipeline executes code maintained by every SIG in O3DE. If you have questions, reach out over [Discord](https://discord.gg/p3padwr58u)!
 
 ## Policy
 
-With few exceptions, no intermittently failing test or feature is allowed. If you see a failure that appears nondeterministic, immediately remove it following these steps:
+No intermittently failing test or feature is allowed, with extremely limited exceptions. If you see a failure that appears nondeterministic, immediately remove it following these steps:
 
 1. Determine if the failure is intermittent
    - If possible, execute on your local machine multiple times to tally a failure rate, and attempt to debug the issue
    - Execute the Jenkins pipeline as many as 10 times, and save at least one text file with a failing log
-2. The source of intermittent failure should be immediately removed from the pipeline, and tagged unstable
-   - If possible, create a new pull request which reverts or disables the intermittent module, feature, test, or hardware-configuration
-3. [Cut a GitHub Issue](https://github.com/o3de/o3de/issues/new/choose) to track both fixing the underlying issue and re-enabling the test
+   - If the failure occurs consistently ***DO NOT CONTINUE*** following these steps, and instead reach out over [Discord](https://discord.gg/p3padwr58u)
+2. [Cut a GitHub Issue](https://github.com/o3de/o3de/issues/new/choose) to track both fixing the underlying issue and re-enabling the test
    - Add a label for the SIG which maintains that feature 'sig/XYZ' ***OR*** use label 'needs-sig'
+3. The source of intermittent failure should be immediately removed from the pipeline
+   - If possible, submit a new pull request which reverts or disables the intermittent module, feature, test, or hardware-configuration
 
 ### Exceptions
 
@@ -44,13 +48,54 @@ The policy above applies to all code, scripts, and hardware used in the Automate
   - Such failures may appear inconsistent across multiple commits, when thrashed by rapid code changes
   - While the pipeline makes these difficult to introduce, when they occur it is still appropriate to immediately revert or disable until fixed
 
-## The Sandbox Suite
+## Disabling Individual Tests
 
-While fixing a stabilty issue, the test can be onboarded to the Sandbox suite. The intent of this suite is to help collect data on whether a fix has stabilized a test, and allow submitting certain fixes before re-onboarding a test into its suite. This suite runs alongside the Periodic test suite, and does not execute in the Automated Review presubmit pipeline nor in the Branch Update postsubmit runs.
+To quickly disable a specific test, modify its source as follows:
 
-In a sense failures in this pipeline are 'expected' and are only used to collect data, not to prevent a regression of functionality. This data should be informing an in-progress fix, to evaluate whether additional work needs to be done. Tests left active in the Sandbox suite for longer than one month will be disabled to save on infrastructure costs.
+### GoogleTest
 
-For information on changing suite registration, please refer to the O3DE Test Onboarding Guide (document not yet created)
+Change tests of the form:
+
+```cpp
+TEST(MyTestClassName, MyTestUnitOfWork_NotableContext_ExpectedResult)
+
+TEST_F(MyTestFixutreName, MyTestUnitOfWork_NotableContext_ExpectedResult)
+
+TEST_P(MyTestParameterizedFixutreName, MyTestUnitOfWork_NotableContext_ExpectedResult)
+```
+
+...to add `DISABLED` to their name:
+
+```cpp
+TEST(MyTestClassName, DISABLED_MyTestUnitOfWork_NotableContext_ExpectedResult)
+
+TEST_F(MyTestFixutreName, DISABLED_MyTestUnitOfWork_NotableContext_ExpectedResult)
+
+TEST_P(MyTestParameterizedFixutreName, DISABLED_MyTestUnitOfWork_NotableContext_ExpectedResult)
+```
+
+### PyTest
+
+Change any test:
+
+```python
+def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
+```
+
+...to add a skip marker to the test
+
+```python
+@pytest.mark.skip(reason="reason this is disabled, such as an issue tracked in GitHub")
+def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
+```
+
+## The Sandbox Test Suite
+
+While fixing a stabilty issue, the test can be onboarded to the Sandbox suite. The intent of this suite is to help collect data on whether a fix has stabilized a test, and to allow submitting certain fixes before re-onboarding a test into its suite. This suite runs alongside the Periodic test suite, and does not execute in the Automated Review presubmit pipeline nor in the Branch Update postsubmit runs.
+
+Failures in this suite are 'expected' and are only used to collect data, not to prevent a regression of functionality. This data should be informing an in-progress fix, to evaluate whether additional work needs to be done. Tests left active in the Sandbox suite for longer than one month will be disabled to save on infrastructure costs.
+
+For more information on changing suite registration, please refer to the O3DE Test Onboarding Guide (document not yet created)
 
 ## Troubleshooting
 
@@ -77,15 +122,13 @@ If you suspect this failure is intermittent, gather more data to prove and clari
 - Isolate a single test using [GoogleTest filtering](https://github.com/google/googletest/blob/master/docs/advanced.md#running-a-subset-of-the-tests) or [PyTest filtering](https://docs.pytest.org/en/6.2.x/usage.html#specifying-tests-selecting-tests)
 - For more data on order-dependent failures, randomize the order of the tests with [GoogleTest shuffle](https://github.com/google/googletest/blob/master/docs/advanced.md#shuffling-the-tests) or [PyTest-random-order](https://github.com/jbasko/pytest-random-order)
 
-For historical health of individual tests in Jekins runs, refer to the Test Metrics Dashboard (currently unavailable)
-
 #### Step 3: Document
 
-After clarifying the failure reason and reproduction rate, create a new [GitHub Issue](https://github.com/o3de/o3de/issues/new/choose) to track a fix. To help raise awareness and priority on the issue, reach out over [Discord](https://discord.gg/p3padwr58u)
+After clarifying the failure reason and reproduction rate, create a new [GitHub Issue](https://github.com/o3de/o3de/issues/new/choose) to track a fix. Add a label for the SIG which maintains that feature 'sig/XYZ' ***OR*** use label 'needs-sig'. To help raise awareness and priority on the issue, also reach out over [Discord](https://discord.gg/p3padwr58u)
 
 #### Step 4: Disable
 
-If possible, disable the test from executing and/or disable the intermittent feature. This will prevent the failure from impacting all other users of O3DE.
+If possible, immediately disable the test from executing and/or disable the intermittent feature. This will prevent the failure from impacting all other users of O3DE.
 
 ## Further Reading
 
