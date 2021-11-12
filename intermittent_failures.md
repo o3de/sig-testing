@@ -30,7 +30,7 @@ No intermittently failing test or feature is allowed, with extremely limited exc
 
 1. Determine if the failure is intermittent
    - If possible, execute on your local machine multiple times to tally a failure rate, and attempt to debug the issue
-   - Execute the Jenkins pipeline as many as 10 times, and save at least one text file with a failing log
+   - Execute the Jenkins pipeline no more than 10 times, saving the first failing log into a text file
    - If the failure occurs consistently ***DO NOT CONTINUE*** following these steps, and instead reach out over [Discord](https://discord.gg/p3padwr58u)
 2. [Cut a GitHub Issue](https://github.com/o3de/o3de/issues/new/choose) to track both fixing the underlying issue and re-enabling the test
    - Add a label for the SIG which maintains that feature 'sig/XYZ' ***OR*** use label 'needs-sig'
