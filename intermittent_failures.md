@@ -7,20 +7,20 @@
   - [Disabling Individual Tests](#disabling-individual-tests)
     - [GoogleTest](#googletest)
     - [PyTest](#pytest)
-  - [The Sandbox Test Suite](#the-sandbox-test-suite)
   - [Troubleshooting](#troubleshooting)
     - [Help! Is my Test Intermittent?](#help-is-my-test-intermittent)
       - [Step 1: Identify](#step-1-identify)
       - [Step 2: Confirm](#step-2-confirm)
       - [Step 3: Document](#step-3-document)
       - [Step 4: Disable](#step-4-disable)
+  - [The Sandbox Test Suite](#the-sandbox-test-suite)
   - [Further Reading](#further-reading)
 
 ## Introduction
 
 This document describes handling unstable failures which appear to occur randomly. The most likely reason you are reading this is due to an intermittent issue in the [Automated Review Pipeline](https://jenkins.build.o3de.org/job/O3DE/).
 
-The AR pipeline performs builds and tests, as well as additional configuration and asset processing steps. Pull Requests are required to be verified by Automated Review before changes get merged. This Continuous Integration system also executes "branch update jobs" after merges, to detect complex merge-order issues which can occur in the time between verification and merge. A separate pipeline also executes at a slower cadence, which runs a wider array of periodic tests and build variants. [SIG-Build](https://github.com/o3de/sig-build/) owns the Jenkins service and scripts and can advise on build failures. [SIG-Testing](https://github.com/o3de/sig-build/) owns test-tools as well as their sanity-tests in this pipeline. While these SIGs create the foundation for testing, the tests executed in this pipeline are primarily owned by other SIGs. These tests, along with the applications they target, must operate deterministically.
+The Automated Review (AR) pipeline performs builds and tests, as well as additional configuration and asset processing steps. Pull Requests are required to be verified by Automated Review before changes get merged. This Continuous Integration system also executes "branch update jobs" after merges, to detect complex merge-order issues which can occur in the time between verification and merge. A separate pipeline also executes at a slower cadence, which runs a wider array of periodic tests and build variants. [SIG-Build](https://github.com/o3de/sig-build/) owns the Jenkins service and scripts, and can advise on build failures. [SIG-Testing](https://github.com/o3de/sig-build/) owns test-tools as well as sanity-tests in this pipeline, which make sure the tools stay functional. While these SIGs maintain the foundation for testing, the majority of tests executed in this pipeline are owned by other SIGs. These tests, along with the applications they target, must operate deterministically.
 
 If you are blocked, you own fixing what blocks you and/or finding support. Even if you are not blocked, the community will appreciate fixes or feedback submitted to the appropriate SIG. Which SIG owns a failure is not always obvious, as the Automated Review pipeline executes code maintained by every SIG in O3DE. If you have questions, reach out over [Discord](https://discord.gg/p3padwr58u)!
 
@@ -46,7 +46,7 @@ The policy above applies to all code, scripts, and hardware used in the Automate
 - Intermittent failures ocurring on only one Operating System are still intermittent failures, though it is reasonable to conditionally disable
 - Builds or tests which reliably fail at a given commit are **not** considered intermittent
   - Such failures may appear inconsistent across multiple commits, when thrashed by rapid code changes
-  - While the pipeline makes these difficult to introduce, when they occur it is still appropriate to immediately revert or disable until fixed
+  - While the pipeline makes consistent difficult to introduce, when they occur it is still appropriate to immediately revert or disable until fixed
 
 ## Disabling Individual Tests
 
@@ -82,20 +82,12 @@ Change any test:
 def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
 ```
 
-...to add a skip marker to the test
+...to add a skip marker to the test:
 
 ```python
 @pytest.mark.skip(reason="reason this is disabled, such as an issue tracked in GitHub")
 def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
 ```
-
-## The Sandbox Test Suite
-
-While fixing a stabilty issue, the test can be onboarded to the Sandbox suite. The intent of this suite is to help collect data on whether a fix has stabilized a test, and to allow submitting certain fixes before re-onboarding a test into its suite. This suite runs alongside the Periodic test suite, and does not execute in the Automated Review presubmit pipeline nor in the Branch Update postsubmit runs.
-
-Failures in this suite are 'expected' and are only used to collect data, not to prevent a regression of functionality. This data should be informing an in-progress fix, to evaluate whether additional work needs to be done. Tests left active in the Sandbox suite for longer than one month will be disabled to save on infrastructure costs.
-
-For more information on changing suite registration, please refer to the O3DE Test Onboarding Guide (document not yet created)
 
 ## Troubleshooting
 
@@ -129,6 +121,14 @@ After clarifying the failure reason and reproduction rate, create a new [GitHub 
 #### Step 4: Disable
 
 If possible, immediately disable the test from executing and/or disable the intermittent feature. This will prevent the failure from impacting all other users of O3DE.
+
+## The Sandbox Test Suite
+
+While fixing a stabilty issue, the test can be onboarded to the Sandbox suite. The intent of this suite is to help collect data on whether a fix has stabilized a test, and to allow submitting certain fixes before re-onboarding a test into its suite. This suite runs alongside the Periodic test suite, and does not execute in the Automated Review presubmit pipeline nor in the Branch Update postsubmit runs.
+
+Failures in this suite are 'expected' and are only used to collect data, not to prevent a regression of functionality. This data should be informing an in-progress fix, to evaluate whether additional work needs to be done. Tests left active in the Sandbox suite for longer than one month will be disabled to save on infrastructure costs.
+
+For more information on changing suite registration, please refer to the O3DE Test Onboarding Guide (document not yet created)
 
 ## Further Reading
 
