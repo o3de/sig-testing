@@ -82,7 +82,7 @@ Change any test:
 def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
 ```
 
-...to add a skip marker to the test:
+...to add a [skip marker](https://docs.pytest.org/en/latest/how-to/skipping.html) to the test:
 
 ```python
 @pytest.mark.skip(reason="reason this is disabled, such as an issue tracked in GitHub")
@@ -132,7 +132,7 @@ For more information on changing suite registration, please refer to the O3DE Te
 
 ## Further Reading
 
-[Martin Fowler on Nondeterminism](https://martinfowler.com/articles/nonDeterminism.html)
-[Flaky Tests at Google](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html)
-[Where Flaky Tests Originate at Google](https://testing.googleblog.com/2017/04/where-do-our-flaky-tests-come-from.html)
-University of Illinois whitepapers on [Classifying Flaky Tests](http://mir.cs.illinois.edu/marinov/publications/LuoETAL14FlakyTestsAnalysis.pdf), [Flaky Test Detection](http://mir.cs.illinois.edu/marinov/publications/LamETAL20LongitudinalFlakyTests.pdf), and [Rerunning Flaky Tests](http://mir.cs.illinois.edu/marinov/publications/LamETAL20ManyFlakyTestsAreNDOD.pdf)
+* [Martin Fowler on Nondeterminism](https://martinfowler.com/articles/nonDeterminism.html)
+* [Flaky Tests at Google](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html)
+* [Where Flaky Tests Originate at Google](https://testing.googleblog.com/2017/04/where-do-our-flaky-tests-come-from.html)
+* University of Illinois whitepapers on [Classifying Flaky Tests](http://mir.cs.illinois.edu/marinov/publications/LuoETAL14FlakyTestsAnalysis.pdf), [Flaky Test Detection](http://mir.cs.illinois.edu/marinov/publications/LamETAL20LongitudinalFlakyTests.pdf), and [Rerunning Flaky Tests](http://mir.cs.illinois.edu/marinov/publications/LamETAL20ManyFlakyTestsAreNDOD.pdf)
