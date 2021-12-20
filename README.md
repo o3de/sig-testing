@@ -6,11 +6,13 @@ This group exists to make testing O3DE software easy and automated. For more inf
 
 ## Meetings
 
-Meeting notes from the our [Meetings](https://o3de.github.io/sig-testing/meetings/) which take place on [Discord](https://discord.gg/p3padwr58u)
+Meeting notes are available from our [Meetings](https://o3de.github.io/sig-testing/meetings/) which take place on [Discord](https://discord.gg/p3padwr58u). Anyone is welcome to join these meetings and politely listen or contribute.
 
 The [full table of previous meetings](https://o3de.github.io/sig-testing/?id=previous-meetings) is available here.
 
 ## Documentation
+
+This repository contains our own documentation on how to operate this SIG, separate from the user-facing documentation at [O3DE.org](https://github.com/o3de/o3de.org)
 
 * [Test Suites](https://github.com/o3de/sig-testing/blob/main/test_suites.md)
 * [Creating New Python Packages](https://github.com/o3de/sig-testing/blob/main/packages-best-practices.md)
