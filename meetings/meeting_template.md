@@ -4,10 +4,10 @@ The standard meeting agenda for SIG-Testing discussions.
 
 ## Bookkeeping
 
-* Navigate to [Discord text channel #sig-testing](https://discord.gg/XwC9P5ay) and also join the voice channel for SIG-Testing
+* Navigate to [Discord text channel #sig-testing](https://discord.gg/XwC9P5ay) and also join the voice channel for SIG-Testing.
 * Wait up to three minutes past the hour for attendees to arrive before starting the meeting. During this time:
   * Look for the [SIG-Testing meeting agenda issue](https://github.com/o3de/sig-testing/issues?q=is%3Aissue+is%3Aopen+label%3Amtg-agenda) if one was already established.
-  * Establish who will take meeting notes, and remind them to commit them into GitHub at https://github.com/o3de/sig-testing/tree/main/meetings/notes
+  * Establish who will take meeting notes, with an action item for them to commit notes into GitHub in the [SIG-Testing meeting notes](https://github.com/o3de/sig-testing/tree/main/meetings/notes) section.
 
 ## Outline Meeting Agenda
 
@@ -24,8 +24,8 @@ The standard meeting agenda for SIG-Testing discussions.
 
 ### Agenda Discussion Topics
 
-* Cover topics on the existing SIG-Testing meeting agenda
-  * If discussion of any topic exceeds five minutes, propose a separate meeting
+* Cover topics on the existing SIG-Testing meeting agenda.
+  * If discussion of any topic exceeds five minutes, propose a separate meeting or RFC to clarify it further.
 
 ### Open Roundtable Discussion
 
@@ -41,11 +41,11 @@ The standard meeting agenda for SIG-Testing discussions.
 * [Link the RFC issue](https://github.com/o3de/sig-testing/issues?q=is%3Aissue+is%3Aopen+label%3Arfc-feature%2Crfc-suggestion+) into Discord channel
 * This process will take at least 20 minutes, with 10 for reading and 10 for feedback.
   * If there is insufficient time, propose an additional meeting time.
-  * Ask attendees to spend ten minutes reading the proposal, adding text comments if they prefer
-  * Ask attendees to discuss the proposal verbally
-  * Clarify next steps for the RFC
+  * Ask attendees to spend ten minutes reading the proposal, adding text comments if they prefer to.
+  * Ask attendees to stop reading and discuss the proposal verbally.
+  * Clarify next steps for the RFC.
 
 ## Closing
 
-* Clarify action items and their owners, including notetaker
-* Thank everyone who attended
+* Clarify action items and their owners, including notetaker.
+* Thank everyone who attended!
