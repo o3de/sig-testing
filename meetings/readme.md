@@ -18,10 +18,4 @@ Please feel free to propose any of your topics, thoughts, or areas you feel are 
 
 ## Previous Meetings
 
-Below is a list of all prior completed meetings and related resources.
-
-| No   | Date y-m-d | Time     | Agenda         | Media | Notes | Resources |
-| ---- | ---------- | -------- | -------        | ----- | ----- | --------- |
-| 0001 | 2021-07-01 | 1800 UTC | Review Charter | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/media/2021-07-01T18_04_57_162Z.mp3)  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0001.md)  | N/A      |
-| 0002 | 2021-07-01 | 1800 UTC | Pipeline Metrics | N/A   | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0002.md)  | N/A      |
-| 0003 | 2021-07-01 | 1800 UTC | GHI Metrics |  N/A  | [Link](https://github.com/o3de/sig-testing/tree/main/meetings/notes/0003.md)  | N/A      |
+Meeting notes are recorded in the [Notes subdirectory](https://github.com/o3de/sig-testing/tree/main/meetings/notes)
