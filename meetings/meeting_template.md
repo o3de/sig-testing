@@ -5,7 +5,7 @@ The standard meeting agenda for SIG-Testing discussions.
 ## Bookkeeping
 
 * Navigate to [Discord text channel #sig-testing](https://discord.gg/XwC9P5ay) and also join the voice channel for SIG-Testing.
-* Wait up to three minutes past the hour for attendees to arrive before starting the meeting. During this time:
+* Wait up to three minutes past the scheduled start for attendees to arrive before starting proceedings. During this time:
   * Look for the [SIG-Testing meeting agenda issue](https://github.com/o3de/sig-testing/issues?q=is%3Aissue+is%3Aopen+label%3Amtg-agenda) if one was already established.
   * Establish who will take meeting notes, with an action item for them to commit notes into GitHub in the [SIG-Testing meeting notes](https://github.com/o3de/sig-testing/tree/main/meetings/notes) section.
 
@@ -30,10 +30,11 @@ The standard meeting agenda for SIG-Testing discussions.
 ### Open Roundtable Discussion
 
 * If there is an RFC ready for today leave time afterward to discuss it, or postpone the roundtable
-* State how the roundtable will operate, and then follow its steps:
-  * Invite all attendees to suggest additional topics, collecting multiple topics before starting discussion for as long as five minutes.
-  * For each topic, restate the prompt and ask the group for opinions (or ask topic requester to clarify)
-    * Discuss each for around five minutes, or until discussion stops for one full minute
+* First clarify how the roundtable will operate, and then follow each step:
+  * Invite all attendees to suggest additional topics, collecting multiple topics before starting discussion (take at most five minutes)
+  * For each topic:
+    * Restate the prompt, ask topic requester if they would like to clarify, and prompt the group for opinions
+    * Allow discussion for around five minutes, or until discussion stops for one full minute
     * Ask the topic requester to summarize their takeaways
 
 ### RFC Reading and Discussion
