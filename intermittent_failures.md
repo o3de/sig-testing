@@ -128,7 +128,7 @@ While fixing a stabilty issue, the test can be onboarded to the Sandbox suite. T
 
 Failures in this suite are 'expected' and are only used to collect data, not to prevent a regression of functionality. This data should be informing an in-progress fix, to evaluate whether additional work needs to be done. Tests left active in the Sandbox suite for longer than one month will be disabled to save on infrastructure costs.
 
-For more information on changing suite registration, please refer to the O3DE Test Onboarding Guide (document not yet created)
+For more information on changing suite registration, please refer to the [O3DE Test Getting Started Guide](https://www.o3de.org/docs/user-guide/testing/getting-started/)
 
 ## Further Reading
 
