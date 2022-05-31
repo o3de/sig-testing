@@ -1,0 +1,43 @@
+# SIG-Testing meeting notes from 2022-05-31 @ 1800 UTC
+
+* Moderator: Kadino
+* Note Taker: jckand-amzn
+
+## SIG Updates
+
+* SIG Steering working on 2022 Roadmap: RFCs for metrics/stability as well as bug fixes are highest priorities
+* Test framework roadmap not as high priority as metrics/stability for 2022, but still important
+* Stability issue with Editor during parallel execution
+     * Can be worked around by running tests serially
+     * Fix submitted for blocking issue with test batching (https://github.com/o3de/o3de/pull/9463)
+
+## Roundtable Discussion
+
+### AR Stability
+
+* RFC in the works with proposals for addressing some of the issues (discussion below)
+* How should we handle best practices for running/utilizing AR?
+  * Public doc updates likely needed - new public docs (action item)
+  * AR runs before PR feedback has been addressed
+    * Some sort of lock before AR runs until after local runs?
+    * SIG Testing cannot really enforce this, so best practice recommendations may be solution from this end
+* Around every 3 months, AR becomes painful for contributors
+* More metrics would be useful for root causing AR instability
+
+### Intermittent Failure Intervention RFC (https://github.com/o3de/sig-testing/issues/43)
+
+* Will likely take until next SIG Testing meeting to determine whether this is the path to follow as it needs more input
+* Currently seeing several users look at the autocut tickets that do exist, but looking at the completely wrong job/potentially old failures
+* Most Important Question for RFC Feedback--What changes need to be made to get sign-off?
+  * More definition on the runbook in terms of what SIG Testing's role would be
+    * May disable tests/may back out code
+    * SIG Testing should take action to stop intermittent failure via whatever means when one SIG is preventing other SIGs from being able to get work done
+* Separate RFC was written to address re-running tests--This was desired, but infrastructural costs are too high
+  * This functionality is available for contributors locally, but isn't widely used
+* SLA for SIG Testing addressing if the runbook is utilized?
+  * 1 month from runbook being enacted? (Worst case scenario)
+  
+## Action Items
+
+* Kadino - Reach out to David for information on other potential SIG priorities for 2022
+* jckand-amzn - Create documentation issue for local testing best practices prior to running AR
