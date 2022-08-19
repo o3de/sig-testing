@@ -2,7 +2,7 @@
 
 ## Summary
 
-Currently, most design decisions and work for debugability are done through either grass-roots movements where small groups of developers make a change, or a contributor pushes for a specific improvement. It is consequently unclear what metrics have been important in past decisions. We want to design and implement metrics so that such decisions can be supported by appropriate data and to measure the effectiveness of changes made because of these decisions.</
+Currently, most design decisions and work for debugability are done through either grass-roots movements where small groups of developers make a change, or a contributor pushes for a specific improvement. It is consequently unclear what metrics have been important in past decisions. We want to design and implement metrics so that such decisions can be supported by appropriate data and to measure the effectiveness of changes made because of these decisions.
 
 Selecting and measuring appropriate metrics for debugability is challenging. Ultimately, debugability has a significant human element that is difficult to quantify. However, it is still valuable in measuring what can be measured, as well as acknowledging the incomplete picture that these metrics provide.
 
