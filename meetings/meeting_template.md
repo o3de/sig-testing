@@ -5,7 +5,8 @@ The standard meeting agenda for SIG-Testing discussions.
 ## Bookkeeping
 
 * Navigate to [Discord text channel #sig-testing](https://discord.gg/XwC9P5ay) and also join the voice channel for SIG-Testing.
-* Wait up to three minutes past the scheduled start for attendees to arrive before starting proceedings. During this time:
+* Before starting, wait up to three minutes past the scheduled start time for attendees to arrive. During this time:
+  * Mention that you are waiting for more attendees
   * Look for the [SIG-Testing meeting agenda issue](https://github.com/o3de/sig-testing/issues?q=is%3Aissue+is%3Aopen+label%3Amtg-agenda) if one was already established.
   * Establish who will take meeting notes, with an action item for them to commit notes into GitHub in the [SIG-Testing meeting notes](https://github.com/o3de/sig-testing/tree/main/meetings/notes) section.
 
