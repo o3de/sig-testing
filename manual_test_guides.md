@@ -32,7 +32,12 @@ SIG-Graphics-Audio
 
 SIG-Network
 --
-*Test Guidance Location:* TBD
+*Test Guidance Location:* https://github.com/o3de/sig-network/tree/main/testing-guidance/workflow-tests
+| Component | Test Suite | Location |
+|---|---|---|
+| Multiplayer | Basic Workflow Tests LKG | https://github.com/o3de/sig-network/blob/main/testing-guidance/workflow-tests/multiplayer/basic-multiplayer-workflow-tests.md |
+| Multiplayer | Multi-Machine Workflow Tests | https://github.com/o3de/sig-network/blob/main/testing-guidance/workflow-tests/multiplayer/multi-machine-multiplayer-workflow-tests.md |
+| Gems | Remote Tools Connection Gem Workflows | https://github.com/o3de/sig-network/blob/main/testing-guidance/workflow-tests/remote-tools-connection-gem/remote-tools-connection-gem-workflow-tests.md |
 
 SIG-Platform
 --
