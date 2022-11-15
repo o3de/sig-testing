@@ -1,20 +1,20 @@
-# Metrics for Debugability
+# Metrics for Debuggability
 
 ## Summary
 
-Currently, most design decisions and work for debugability are done through either grass-roots movements where small groups of developers make a change, or a contributor pushes for a specific improvement. It is consequently unclear what metrics have been important in past decisions. We want to design and implement metrics so that such decisions can be supported by appropriate data and to measure the effectiveness of changes made because of these decisions.
+Currently, most design decisions and work for debuggability are done through either grass-roots movements where small groups of developers make a change, or a contributor pushes for a specific improvement. It is consequently unclear what metrics have been important in past decisions. We want to design and implement metrics so that such decisions can be supported by appropriate data and to measure the effectiveness of changes made because of these decisions.
 
-Selecting and measuring appropriate metrics for debugability is challenging. Ultimately, debugability has a significant human element that is difficult to quantify. However, it is still valuable in measuring what can be measured, as well as acknowledging the incomplete picture that these metrics provide.
+Selecting and measuring appropriate metrics for debuggability is challenging. Ultimately, debuggability has a significant human element that is difficult to quantify. However, it is still valuable in measuring what can be measured, as well as acknowledging the incomplete picture that these metrics provide.
 
-There is also a wide range of improvements that can be done for debugability timelines that cross over into other areas. For example, faster build times also improves debugability timelines. However, to limit the scope of this RFC, we are going to limit this document to discussing elements that are unique to debugability.
+There is also a wide range of improvements that can be done for debuggability timelines that cross over into other areas. For example, faster build times also improves debuggability timelines. However, to limit the scope of this RFC, we are going to limit this document to discussing elements that are unique to debuggability.
 
 We are suggesting to measure a few key debugging times and polling customers on their debugging experience.
 
 ## What is the motivation for this suggestion?
 
-The primary is to enable metrics-driven decisions around improvements to debugability. Diving a little deeper, these metrics will allow us to more intelligently focus our efforts in improving debugability, specifically in improving the timelines for discovering and fixing bugs. It will also allow us to prioritize which problems are most severe.
+The primary is to enable metrics-driven decisions around improvements to debuggability. Diving a little deeper, these metrics will allow us to more intelligently focus our efforts in improving debuggability, specifically in improving the timelines for discovering and fixing bugs. It will also allow us to prioritize which problems are most severe.
 
-We also want to be able to track the impact of decisions we make to improve debugability. Measuring metrics and their subsequent improvement is one way to do this. This will allow us to provide visibility to the larger organization by a metrics-driven approach and provide support for claims of debugability improvements.
+We also want to be able to track the impact of decisions we make to improve debuggability. Measuring metrics and their subsequent improvement is one way to do this. This will allow us to provide visibility to the larger organization by a metrics-driven approach and provide support for claims of debuggability improvements.
 
 ## Design Description
 
@@ -37,9 +37,9 @@ Here are some common steps of finding and fixing a bug:
 
 ### Measuring Debugging Time
 
-Each of the steps above can be measured in time, although the value of those data points will vary wildly. Many of them are too dependent on the bug, can be done in parallel, or are out of scope for debugability. In order to ensure consistent measuring, we will perform a UX study where research subjects are monitored by a researcher. The researcher will measure the time each step takes with a stopwatch, record the results, and collect other feedback.
+Each of the steps above can be measured in time, although the value of those data points will vary wildly. Many of them are too dependent on the bug, can be done in parallel, or are out of scope for debuggability.
 
-Local reproduction is a borderline case - things like build time are out of scope, but making sure that the bug can be reproduced locally reliably are in scope. Further, there's a ton of variables involved that will make any metrics we do measure exceptionally noisy. Did they have a partial sync already? Did they have a build already? Do they prefer to debug via logs or debug via the debugger? All of these will cause the time to vary wildly while not actually indicating the ease of the debugging as defined as in-scope for this RFC. Given that local reproduction is more of a binary question (Can we reproduce the bug locally?) given the scope of this RFC, we will not be including it as a suggested timed metric.
+Local reproduction is a borderline case - things like build time are out of scope, but making sure that the bug can be reproduced locally reliably are in scope. Further, there's a ton of variables involved that will make any metrics we do measure exceptionally noisy. Did they have a partial sync already? Did they have a build already? Do they prefer to debug via logs or debug via the debugger? All of these will cause the time to vary wildly while not actually indicating the ease of the debugging as defined as in-scope for this RFC. Given that local reproduction is more of a binary question (Can we reproduce the bug locally?) and given the scope of this RFC, we will not be including it as a suggested timed metric.
 
 ### Debugging Time Metrics
 
@@ -55,6 +55,8 @@ Thus, this leaves us with 3 areas to measure for time:
 3. Artifact-finding time: We expect this to be a small portion of the total time consumed, but it is still valuable to reduce it where possible.
 
 The first is a binary option - we can either send the e-mail at the end of the build, or upon the first failure. But measuring that difference could allow us to decide if the earlier messaging time is worthwhile. The second two options are going to have to be user-reported metrics.
+
+Since we are already including user-reported metrics, we would also include a question about whether or not the logs, once found, were useful in debugging the issue.
 
 Metric | Description | Measured By
 -- | -- | --
@@ -72,12 +74,13 @@ Even if a given objective is swift to complete, having too many steps (often in 
 
 While potentially less reliable than absolute metrics such as measuring time, polling customers for their preferences and pain points is still valuable. We would reach out to the sig-ux in order to develop questions. Measuring user preferences is not a primary skill set of our team and we would want to lean on experts to ensure an effective solution for our customers.
 
-In addition to broad polls, we will include deeper individual customer reports where we work with a single developer to examine their experience directly. For this step, we would work with a small sample of specific developers to get a detailed view of their debugging experience before and after changes. While this will take more time, it will provide more reliable results and allow us to guarantee accuracy in our polling.
+As part of polling, we would include instruction on how to effectively cut issues for inefficient workflows. While this would not produce immediate results, teaching our customers how to effectively provide feedback long-term will allow us to see their pain points well after the survey(s) have been completed.
 
 ### Checks
 
 As a part of polling, we want to ensure that certain key checks are hit. These are:
 
+* Were the logs valuable in helping you debug/reproduce the bug?
 * Were you able to reproduce the bug locally, the first time?
 * Were you able to reproduce the bug locally?
 * Were you able to reproduce the bug?
@@ -101,9 +104,8 @@ Problems are being logged, but are not being actioned on | Use metrics to provid
 
 ## What are the advantages of the suggestion?
 
-* Provides absolute metrics in debugability (see table above)
 * Polls customers directly to get their experiences
-* Focuses on the key aspects of debugability and provides a limited scope
+* Focuses on the key aspects of debuggability and provides a limited scope
 * Low investment cost
 
 ## What are the disadvantages of the suggestion?
