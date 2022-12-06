@@ -2,7 +2,7 @@
 
 ## Meetings
 
-Each SIG hosts a regular community meeting to update the community about the progress of O3DE and the SIG's contribution to the project. It is a recurring event to give everyone a chance to have their voice heard. The SIG holds primary meetings twice monthly, and often tracks [agendas on GitHub](https://github.com/o3de/foundation/issues?q=is%3Aopen+label%3Asig%2Ftesting+label%3Amtg-agenda+).
+Each SIG hosts a regular community meeting to update the community about the progress of O3DE and the SIG's contribution to the project. It is a recurring event to give everyone a chance to have their voice heard. The SIG holds primary meetings twice monthly, and often tracks [agendas on GitHub](https://github.com/o3de/sig-testing/issues?q=is%3Aopen+label%3Amtg-agenda+).
 
 Please [reach out on Discord](https://discord.gg/p3padwr58u) or [Sign up on the Mailing Lists](https://lists.o3de.org/groups) to get notifications for the recurring events.
 
@@ -16,7 +16,7 @@ Anyone is welcome to attend! O3DE cannot work without the help and input from as
 
 ## Agenda Items
 
-The agenda for each meeting is saved as [an issue on Github](https://github.com/o3de/foundation/issues?q=label%3Asig%2Ftesting+label%3Amtg-agenda+) under the O3DE [Foundation repository](https://github.com/o3de/foundation).
+The agenda for upcoming meetings is sometimes saved as [an issue on Github](https://github.com/o3de/sig-testing/issues?q=label%3Amtg-agenda+) under the O3DE [SIG-Testing repository](https://github.com/o3de/sig-testing/). Meetings without a stated agenda always try to include a roundtable discussion.
 
 Please feel free to propose any of your topics, thoughts, or areas you feel are important to discuss. *Agenda items do not need to all be pre-planned, and can be added during roundtable discussion portion of any meeting.*
 
