@@ -8,6 +8,7 @@ The standard workflow for clarifying issues in the SIG-Testing backlog.
 * Wait up to three minutes past the hour for attendees to arrive before starting the meeting. During this time open the following browser tabs:
   * [SIG-Testing issues](https://github.com/o3de/sig-testing/issues?q=is%3Aissue+is%3Aopen+-label%3Atriage%2Faccepted%2Ctriaged%2Fneeds-information%2Cmtg-agenda)
   * [O3DE Issues for sig/testing](https://github.com/o3de/o3de/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Ftesting+-label%3Atriage%2Faccepted%2Ctriage%2Fneeds-information)
+  * [O3DE Extras Issues for sig/testing](https://github.com/o3de/o3de-extras/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Ftesting+-label%3Atriage%2Faccepted%2Ctriage%2Fneeds-information)
   * [O3DE Docs Issues for sig/testing](https://github.com/o3de/o3de.org/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Ftesting+-label%3Atriage%2Faccepted%2Ctriage%2Fneeds-information)
 
 ## Triage Process
