@@ -2,8 +2,9 @@
 name: 'Roadmap Item'
 about: Create roadmap item for this project
 title: Roadmap Item =description=
-labels: kind/roadmap
+labels: kind/roadmap, needs-triage
 assignees: ''
+
 ---
 
 # O3DE Roadmap Item Template
@@ -25,6 +26,8 @@ Single paragraph explanation of the roadmap item
 
 ### Tasks
 What tasks are necessary to complete the roadmap item?
+- [ ] _GitHub issue 1 link_
+- [ ] _GitHub issue 2 link and so on._
 
 ### Related Links
 Link to additional informaton such as RFC related to the roadmap item.
