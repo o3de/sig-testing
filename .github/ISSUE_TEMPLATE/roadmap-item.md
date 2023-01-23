@@ -15,7 +15,7 @@ This roadmap item template should be used for any feature that shows in the O3DE
 # ----- DELETE EVERYTHING FROM THE TOP TO THE SUMMARY LINE BELOW WHEN USING TEMPLATE ----- #
 
 ### Summary:
-Single paragraph explanation of the roadmap item
+Single paragraph explanation
 
 ### What is the relevance of this feature?
 - What problems does it solve? 
@@ -26,9 +26,8 @@ Single paragraph explanation of the roadmap item
 ### Tasks
 ```[tasklist]
 ### Tasks
-- [ ] https://github.com/o3de/sig-testing/issues/34
-- [ ] Metrics RFC
-- [ ] (followup work TBD)
+- [ ] https://github.com/o3de/sig-testing/issues/ISSUE#
+- [ ] (additional work)
 ```
 
 ### Related Links
