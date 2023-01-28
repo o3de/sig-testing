@@ -2,8 +2,9 @@
 name: 'Roadmap Item'
 about: Create roadmap item for this project
 title: 'Roadmap: =description='
-labels: kind/roadmap
+labels: kind/roadmap, needs-triage
 assignees: ''
+
 ---
 
 # O3DE Roadmap Item Template
@@ -23,11 +24,10 @@ Single paragraph explanation
 - What will it do once completed?
 - Are there any required changes or impacts to other features? 
 
-### Tasks
 ```[tasklist]
 ### Tasks
-- [ ] https://github.com/o3de/sig-testing/issues/ISSUE#
-- [ ] (additional work)
+- [ ] _GitHub issue 1 link_
+- [ ] _GitHub issue 2 link and so on._
 ```
 
 ### Related Links
