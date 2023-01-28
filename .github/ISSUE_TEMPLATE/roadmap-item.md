@@ -1,7 +1,7 @@
 ---
 name: 'Roadmap Item'
 about: Create roadmap item for this project
-title: Roadmap: =description=
+title: 'Roadmap: =description='
 labels: kind/roadmap, needs-triage
 assignees: ''
 
