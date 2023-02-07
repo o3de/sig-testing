@@ -35,7 +35,8 @@ The standard meeting agenda for SIG-Testing discussions.
   * Invite all attendees to suggest additional topics, collecting multiple topics before starting discussion (take at most five minutes)
   * For each topic:
     * Restate the prompt, ask topic requester if they would like to clarify, and prompt the group for opinions
-    * Allow discussion for around five minutes, or until discussion stops for one full minute
+    * Allow discussion for around five minutes, or until discussion stops for around one minute
+    * Ask if an RFC needs to be proposed
     * Ask the topic requester to summarize their takeaways
 
 ### RFC Reading and Discussion
