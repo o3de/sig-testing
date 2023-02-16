@@ -35,7 +35,7 @@ There are many types of in-game tests which would become easier to author. The n
 
 An example of an in-game test would be a simple [black-box test](https://www.softwaretestinghelp.com/black-box-testing/) for an existing O3DE system, such as Physics:
 
-![Physics test](phystest.png)
+![Physics test](phystest.png?raw=true)
 
 1. Initialize a scenario
    - load a level
@@ -55,7 +55,7 @@ Note: The test above can already be written in the O3DE Editor, through the Edit
 
 Customers of O3DE can also create tests for their own gameplay features, verifying behavior beyond what came bundled with O3DE. For this example, assume someone has created a real-time game where Artificial Intelligence (AI) controlled non-player characters (NPCs) can attack one another. A simple test for this system would be:
 
-![AI test](aitest.png)
+![AI test](aitest.png?raw=true)
 
 1. Initialize a scenario
    - load a level
@@ -77,7 +77,7 @@ This test could be summarized as "When hostile AI meet, they attack one another 
 
 Many games depend on systems networked across multiple machines. And while delivering a securely networked test framework can be excluded from this feature's scope, the proposed system must be designed to exist as part of a distributed framework. Tests of this style would include a higher-level orchestration than the examples above:
 
-![Networked test](nettest.png)
+![Networked test](nettest.png?raw=true)
 
 1. Configure additional external (cloud) services
 2. Set up Server(s)
@@ -107,7 +107,7 @@ In-engine test tools should create a lightweight interface to the existing ways 
 
 The overall test execution and reporting can be coordinated by a SystemComponent specific to the test-system, with individual tests existing as Components attached to Entities in the game world. UI to simplify representation in the Editor requires an EditorSystemComponent. Everything except user-defined test code should exist in an easily disableable Gem, and disabling the Gem must also cleanly disable all user-defined test code that depends on it.
 
-![Overview](overview.png)
+![Overview](overview.png?raw=true)
 
 The diagram above outlines the data flow for in-engine automation, composed of the following separate layers:
 
@@ -162,7 +162,7 @@ The layers above would provide a minimum viable product. After doing so, the sys
 
 A SystemComponent can automatically manage test execution and reporting within one executable, though it also needs an interface to the outside world. To easily detect and report crashes, part of the orchestration of tests should exist out-of-process with the O3DE engine. A commandline interface can exist as a standalone tool which communicates with the Test system inside the O3DE Engine, and creates its reports.
 
-![Orchestration](orchestration.png)
+![Orchestration](orchestration.png?raw=true)
 
 The image above shows a zoomed in data flow of the previous overview image, with more available tests. While many tests are available, only one test is being requested to execute.
 
@@ -174,7 +174,7 @@ The method of sending test parameters needs to be determined. While it would be 
 
 Individual user-defined test components serve as containers for the logic in each test: to setup scenarios, to run test-steps, and to clean up afterward. Along each step, they will report their progress to the test-system Interface. Primary pass/fail information should be communicated to the SystemComponent from the user-defined code, following an Assert/Expect format. Everything at this layer will need to be plumbed to each supported programming language.
 
-![Components](components.png)
+![Components](components.png?raw=true)
 
 The image above focuses on the data flow between the user on the commandline, the Test Harness system, and an individual test component. To communicate pass/fail status, tests will use the same type of Expect and Assert functionality common in frameworks such as GoogleTest. Expect would verify a statement and then log the location of success/failure with the SystemComponent. Assert does the same, and then also immediately ends the test (starting its cleanup steps early).
 
@@ -279,7 +279,7 @@ Should an interactive socket be used, or are CLI launch arguments sufficient?
 
 Using sockets would simplify writing networked test scenarios which sequentially step through commands between multiple devices. In the diagram below sockets could follow either orchestration-script writing pattern, whereas CLI parameters could only use the pattern on the right:
 
-TODO diagram of networked orchestration
+![Networked scripts](netscript.png?raw=true)
 
 If a socket connection is not used, it will be more difficult to coordinate tests and report results. Not using a socket will also require any test filtering and iteration occur inside the Engine, increasing the complexity of what must run in each application.
 
