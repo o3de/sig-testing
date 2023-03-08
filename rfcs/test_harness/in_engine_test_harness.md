@@ -407,11 +407,10 @@ No. While it should be possible for a test to verify readiness signals before ex
 
 ## Appendix: In-Engine Testing Demand
 
-The following resources outline the current demand for such tools:
+The following resources outline the current desire for such tools:
 
-TODO:
-1. [1](https://www.youtube.com/watch?v=X673tOi8pU8)
-2. [2](https://www.youtube.com/watch?v=s1JOSbUR6KE)
-3. [3](https://www.youtube.com/watch?v=8d0wzyiikXM)
-4. [4](https://www.youtube.com/watch?v=2VDlX3Dqm0w)
-5. [5](https://www.gamedeveloper.com/programming/testing-for-game-development#automation))
+1. [Automated Testing of Gameplay Features in 'Sea of Thieves'](https://www.youtube.com/watch?v=X673tOi8pU8)
+2. [AI for Testing: The Development of Bots that Play Battlefield V](https://www.youtube.com/watch?v=s1JOSbUR6KE)
+3. [Automated Testing and Profiling for Call of Duty](https://www.youtube.com/watch?v=8d0wzyiikXM)
+4. [Horizon Zero Dawn: A QA Open World Case Study](https://www.youtube.com/watch?v=2VDlX3Dqm0w)
+5. [Testing for Game Development](https://www.gamedeveloper.com/programming/testing-for-game-development#automation)
