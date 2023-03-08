@@ -6,13 +6,13 @@ O3DE needs test automation tools for the game-executables created via O3DE. An i
 
 ## What is the relevance of this feature?
 
-Test automation is key to efficient software development, and is increasingly highlighted as key to success in modern game development workflows ([1](https://www.youtube.com/watch?v=X673tOi8pU8),[2](https://www.youtube.com/watch?v=s1JOSbUR6KE),[3](https://www.youtube.com/watch?v=8d0wzyiikXM),[4](https://www.youtube.com/watch?v=2VDlX3Dqm0w),[5](https://www.gamedeveloper.com/programming/testing-for-game-development#automation)). In the realm of simulations, automating a test can help support or disprove a hypothesis in an easily repeatable way. Tests can also serve as a learning tool, helping document and drive a real-world example of how a developer can use the system under test. Currently there is no simple and automated way to run tests in the game "launcher" executables created via O3DE. Developers are left to implement their own solution. This proposal intends to fill that in-game testing gap.
+Test automation is key to efficient software development, and is increasingly highlighted as key to success in modern game development workflows (see appendix for attribution). In the realm of simulations, automating a test can help support or disprove a hypothesis in an easily repeatable way. Tests can also serve as a learning tool, helping document and drive a real-world example of how a developer can use the system under test. Currently there is no simple and automated way to run tests in the game "launcher" executables created via O3DE. Developers are left to implement their own solution. This proposal intends to fill that in-game testing gap.
 
 O3DE's current test-writing tools primarily target C++ libraries at a low level with GoogleTest, or target the O3DE Editor at a higher level with Python-based tools. While developers can always write arbitrary code to run in O3DE launchers, there are no standardized tools to support writing test code in the engine. Providing these tools as a Gem would allow developers to easily onboard to in-game testing, and make it easy to disable that automation before public release.
 
 ## Feature design description
 
-Game logic test-writing should meet the developer where they do their work: at the inter-system "gameplay programming" level. Developers add new production logic between O3DE systems in multiple locations:
+Game logic test authoring should meet the developer where they do their work: at the inter-system "gameplay programming" level. Developers add new production logic between O3DE systems in multiple locations:
 
 - Lua Scripts
 - ScriptCanvas Scripts
@@ -33,7 +33,7 @@ There are many types of in-game tests which would become easier to author. The n
 
 ### Scenario 1: Tests of O3DE features
 
-An example of an in-game test would be a simple [black-box test](https://www.softwaretestinghelp.com/black-box-testing/) for an existing O3DE system, such as Physics:
+An example of an in-game test would be a simple [black-box test](https://www.softwaretestinghelp.com/black-box-testing/) for an existing O3DE system, such as Physics. The following test would be part of O3DE's self-tests, likely in the AutomatedTesting project:
 
 ![Physics test](phystest.png?raw=true)
 
@@ -53,7 +53,7 @@ Note: The test above can already be written in the O3DE Editor, through the Edit
 
 ### Scenario 2: Tests of single-player game logic
 
-Customers of O3DE can also create tests for their own gameplay features, verifying behavior beyond what came bundled with O3DE. For this example, assume someone has created a real-time game where Artificial Intelligence (AI) controlled non-player characters (NPCs) can attack one another. A simple test for this system would be:
+Customers of O3DE can also create tests for their own gameplay features, verifying behavior beyond what came bundled with O3DE. Such tests would exist in their separate projects, downstream from O3DE. For this example, assume someone has created a real-time game where Artificial Intelligence (AI) controlled non-player characters (NPCs) can attack one another. A simple test for this system would be:
 
 ![AI test](aitest.png?raw=true)
 
@@ -72,6 +72,8 @@ Customers of O3DE can also create tests for their own gameplay features, verifyi
    - reset any secondary data tracked by AI or Progression systems
 
 This test could be summarized as "When hostile AI meet, they attack one another and cause damage." Depending on the game design, such a test could also be extended into a deeper test of verifying one of the characters eventually collapses. (this would make the test slower and also more fragile to gameplay changes, if in potentially useful ways which can expose game design issues)
+
+These tests use the same interface as Scenario 1. The primary difference is what repo they exist in, what they test, and who maintains them.
 
 ### Scenario 3: Tests of networked game logic
 
@@ -99,11 +101,11 @@ Many games depend on systems networked across multiple machines. And while deliv
 6. Teardown Server(s)
 7. Teardown Services
 
-The proposed feature covers only one part of step 4, but needs to be capable of running within the distributed context. There are many subtle parts of authentication and deployment which should be handled by other automated systems. However even without those systems defined, delivering the proposed feature should enable local-only interaction between client and server executables.
+The proposed feature covers only one part of step 4, but needs to be capable of running within the distributed context. This broader orchestration script may run locally and target an on-premises hardware fleet, or may run in and target an entirely cloud-hosted environment. There also are many subtle parts of authentication and deployment which should be handled by other automated systems. However even without those systems defined, delivering the proposed feature should still enable local-host interaction between client and server executables.
 
 ## Technical design description
 
-In-engine test tools should create a lightweight interface to the existing ways which developers write gameplay-level code. Different systems inside O3DE are knit together primarily with AZ::Interface, AZ::Event, and/or EBus messages. This is true both for preexisting systems provided with O3DE, as well as new user-defined code. Individual tests will rely on existing interfaces to automate interactions, in the same way as production game code.
+In-engine test tools should create a lightweight interface to the existing ways which developers write gameplay-level code. Different systems inside O3DE are knit together primarily with [AZ::Interface](https://www.o3de.org/docs/user-guide/programming/messaging/az-interface/), [AZ::Event](https://www.o3de.org/docs/user-guide/programming/messaging/az-event/), and/or [EBus](https://www.o3de.org/docs/user-guide/programming/messaging/ebus/) messages. This is true both for preexisting systems provided with O3DE, as well as new user-defined code. Individual tests will rely on existing system interfaces to automate interactions, in the same way as production game code.
 
 The overall test execution and reporting can be coordinated by a SystemComponent specific to the test-system, with individual tests existing as Components attached to Entities in the game world. UI to simplify representation in the Editor requires an EditorSystemComponent. Everything except user-defined test code should exist in an easily disableable Gem, and disabling the Gem must also cleanly disable all user-defined test code that depends on it.
 
@@ -303,6 +305,8 @@ The need to frequently relaunch the application with new CLI Args could be mitig
 
 The Remote Console interface and CVars appear to already provide an interactive communication channel. Is RC deprecated? Should it be reused?
 
+Another alternative worth investigating is the [Remote Tools Gem](https://github.com/o3de/o3de/tree/development/Gems/RemoteTools).
+
 ### Removing files from deployable release builds
 
 - Is this feature necessary for a test framework?
@@ -400,3 +404,14 @@ Execution logs remain important artifacts to collect and provide alongside test 
 ### Will test start-time be synchronized and consistent between executions?
 
 No. While it should be possible for a test to verify readiness signals before executing, there are few deterministic timing guarantees from current hardware or software. This is a general gameplay programming problem which also plagues tests. It should be adequate to investigate such issues as they appear in individual systems.
+
+## Appendix: In-Engine Testing Demand
+
+The following resources outline the current demand for such tools:
+
+TODO:
+1. [1](https://www.youtube.com/watch?v=X673tOi8pU8)
+2. [2](https://www.youtube.com/watch?v=s1JOSbUR6KE)
+3. [3](https://www.youtube.com/watch?v=8d0wzyiikXM)
+4. [4](https://www.youtube.com/watch?v=2VDlX3Dqm0w)
+5. [5](https://www.gamedeveloper.com/programming/testing-for-game-development#automation))
