@@ -191,6 +191,9 @@ Cons
 
 ## Appendix: Estimated metrics load from Jenkins pipelines
 
+<details><summary>expand</summary>
+<p>
+
 This section estimates how much metrics data would be logged across multiple pipelines, which each have many jobs and many stages.
 
 ### Jenkins Jobs Metrics
@@ -291,3 +294,6 @@ Estimated Total
 Metrics systems commonly store metrics with dimensional values, grouping a "single metric" as multiple related values instead of only individual key-value pairs. Under this model, daily metrics would be around 5,200,000 and heavily dominated by test-metrics. If only test modules and failures are logged, and not all data for individual tests, this would instead be around 30,000. If metrics are allowed to naturally grow, within a year this would likely reach 6,000,000 daily metrics, versus 50,000 if only test modules and failures are recorded.
 
 This pessimistically-high estimation equates to around 42,000,000 vs 350,000 metrics per week (180,000,000 vs 1,500,000 per month which is 2.2bn vs 0.02bn per year). Estimated (compressed) data volume per month is 83 TB for full test metrics, and 2 TB for sparse test metrics. Given the volume of raw metrics and the time-limited value they provide, they should not be stored indefinitely. It would be appropriate to only persist condensed reports long-term.
+
+</p>
+</details>
