@@ -104,6 +104,9 @@ Cons
 
 ### Other Backend Options
 
+<details><summary>expand</summary>
+<p>
+
 #### Wait for LFX Insights features
 
 Linux Foundation has its own metrics dashboard, which is not currently ready for handling custom metrics. This [feature has been requested](https://portal.productboard.com/bqt1cgergoszsqheudb7leux/c/118-bringyourownconnector-byoc), but there is no commitment to deliver it.
@@ -188,6 +191,9 @@ Cons
 * Need to define an S3 data schema to limit costs
 * Need to create custom dashbaords
 * Need to write Alarms as queries for a Lambda to run
+
+</p>
+</details>
 
 ## Appendix: Estimated metrics load from Jenkins pipelines
 
