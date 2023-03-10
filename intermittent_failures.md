@@ -89,6 +89,14 @@ def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
 def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
 ```
 
+...to skip for a specified OS:
+```python
+import ly_test_tools
+
+@pytest.mark.skipif(ly_test_tools.LINUX, reason="reason this is disabled, such as an issue tracked in GitHub")
+def test_MyTestUnitOfWork_NotableContext_ExpectedResult():
+```
+
 ## Troubleshooting
 
 ### Help! Is my Test Intermittent?
