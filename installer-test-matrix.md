@@ -13,7 +13,7 @@
 
 ## Installer FTUE
 
-First Time User Experience(FTUE): 
+**First Time User Experience(FTUE):** 
 
 * Launch O3DE.exe.
 * Create and build a new project.
@@ -31,18 +31,18 @@ This area is used to test the Installer Requirements for the **Windows Installer
 
 25/1/2022 - This file contains numerous setup configurations that are recommended to run against each O3DE releases installers.
 
-Windows Requirements
+*Windows Requirements*
 
 * Microsoft Visual Studio 2019 version 16.9.2 through version 16.11.x are supported with O3DE.
     *   This includes manually adding desktop/game development with C++ workloads
 * Visual C++ Redistributable for Visual Studio 2019     
 * CMake 3.20.5 or later
 
-Windows Requirement Alternatives
+*Windows Requirement Alternatives*
 
 * Visual Studio 2022
 
-Linux Requirements
+*Linux Requirements*
 
 * CMake 3.20.5 or later      
 * Clang 12
@@ -62,7 +62,7 @@ Linux Requirements
 * zlib1g-dev
 * mesa-common-dev  
 
-Linux Requirement Alternatives
+*Linux Requirement Alternatives*
 
 * Clang 13
 
@@ -74,7 +74,7 @@ Linux Requirement Alternatives
 
 Note: In all cases where a requirement is intentionally left out or incorrect, the goal is to test for clear error messaging related to the issue (in some cases these errors will happen at the OS level and it may not be in our power to update the error messaging, but these should be recorded for reference/possible Troubleshooting page)
 
-**Windows**
+*Windows*
 
 *   Prerequisites are met exactly as written
 *   No CMake
@@ -86,7 +86,7 @@ Note: In all cases where a requirement is intentionally left out or incorrect, t
 *   Earlier version of CMake installed (earlier than 3.20.5)
 *   Visual studio version other than 16.9.2 through version 16.11.x is used (while using 2019, 2022 will inherently be this)
 
-**Linux**
+*Linux*
 
 * Prerequisites are met exactly as written
 * No CMake
@@ -99,7 +99,7 @@ Note: In all cases where a requirement is intentionally left out or incorrect, t
 
 </details>
 
-#### Installer Requirements Workflows
+### Installer Requirements Workflows
 
 | Scenario                                                                          | OS              | Workflow                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Things to Watch For                                                                                                  |
 |-----------------------------------------------------------------------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -115,11 +115,13 @@ Note: In all cases where a requirement is intentionally left out or incorrect, t
 
 ---
 
-### Area: General Installer Workflows
+### Area: General Installer
+
 This area will test General Installer Workflows for the **Windows Installer**, **Linux Installer (deb)**, and 
 **Linux Snap Installer**.
 
 **Project Requirements**
+
 * The **Windows Installer**, **Linux Installer (deb)**, or **Linux Snap Installer** is present on your machine.
 * [O3DE Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) are satisfied on your machine.
 * [Linux Snapd](https://snapcraft.io/docs/installing-snapd) is installed on your Linux machine.
@@ -129,6 +131,8 @@ This area will test General Installer Workflows for the **Windows Installer**, *
 
 **Suggested Time Box:** 2 hours per platform.
 
+### General Installer Workflows
+
 | Scenario                                         | OS                                  | Workflow                                                                                                                                                                                                                                                                                                                                                            | Things to Watch For                                                                                                              |
 |--------------------------------------------------|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | Install O3DE in Default Location                 | Windows Installer & Linux Installer | <ol><li>Download latest Release or Development Installer.</li><li>Run the Installer.</li><li>Select **Install**.</li><li>Run through the [Installer FTUE](#installer-FTUE). </li></ol>                                                                                                                                                                              | <ul><li>O3DE successfully installs in the default location.</li><li>User is able to complete the FTUE.</li></ul>                 |
@@ -137,8 +141,4 @@ This area will test General Installer Workflows for the **Windows Installer**, *
 | Install O3DE Linux Snap from the Snapcraft Store | Linux Snap Installer                | <ol><li>Run the snap installer on the Snapcraft Store O3DE package.<ul><li>`sudo snap install o3de`</li></ul><li>Run through the [Installer FTUE](#installer-ftue). </li></ol>                                                                                                                                                                                      | <ul><li>O3DE successfully installs in the snap installed packages location.</li><li>User is able to complete the FTUE.</li></ul> |
 | Repair O3DE Install                              | Windows Installer & Linux Installer | <ol><li>O3DE has already been installed on your machine.</li><li>Corrupt the installation by removing required files.</li><li>Run the Installer.</li><li>Use the Installer's **Repair** functionality.</li><li>Run through the [Installer FTUE](#installer-ftue). </li></ol>                                                                                        | <ul><li>O3DE successfully repairs the O3DE installation.</li><li>User is able to complete the FTUE.</li></ul>                    |
 | Uninstall O3DE                                   | Windows Installer & Linux Installer | <ol><li>With O3DE already installed, launch the installer.</li><li>Select "Uninstall".</li></ol>                                                                                                                                                                                                                                                                    | <ul><li>The installer successfully uninstalls O3DE from the previously defined location on disk.</li></ul>                       |
-
-
-
-
-
+---
